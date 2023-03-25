@@ -13,6 +13,10 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        project: [Gateway_Solution, Patient_Services]
 
     steps:
     - uses: actions/checkout@v3
@@ -20,16 +24,10 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
-    - name: Restore dependencies
+        
+    - name: Build and Test ${{ matrix.project }}
       run: |
-        cd Gateway_Solution
-        cd ./Patient_Services
+        cd ${{ matrix.project }}
         dotnet restore
-    - name: Build
-      run: |
-        dotnet build --no-restore Gateway_Solution
-        dotnet build --no-restore ./Patient_Services
-    - name: Test
-      run: |
-        dotnet test --no-build --verbosity normal Gateway_Solution
-        dotnet test --no-build --verbosity normal ./Patient_Services
+        dotnet build
+        dotnet test
