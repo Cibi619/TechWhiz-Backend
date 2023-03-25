@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_Gateway", "API_Gateway\API_Gateway.csproj", "{508B55D3-FEA8-4701-9431-770E345992E2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Patient_Services", "..\Backup\Team-TechWhiz\BackendSolutions\PatientSolution\Services\Patient_Services.csproj", "{C6F09EEB-8D92-4192-984D-31CB251CED0C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Patient_Logic", "..\Backup\Team-TechWhiz\BackendSolutions\PatientSolution\Patient_Logic\Patient_Logic.csproj", "{712C6008-160E-49E3-AFC7-5386F7348AF8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Patient_Models", "..\Backup\Team-TechWhiz\BackendSolutions\PatientSolution\Models\Patient_Models.csproj", "{5FA366AA-4BB6-4839-80CB-27A4D1A144E3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Patient_DataEntities", "..\Backup\Team-TechWhiz\BackendSolutions\PatientSolution\Entities\Patient_DataEntities.csproj", "{F15996D1-F99B-487A-842F-13F6D8A6DB1B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Availablility_Services", "..\Backup\Team-TechWhiz\BackendSolutions\Availability\Services\Availablility_Services.csproj", "{38549BA9-12CD-430D-9BE2-171B938F200D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Availability_BusinessLogic", "..\Backup\Team-TechWhiz\BackendSolutions\Availability\BusinessLogic\Availability_BusinessLogic.csproj", "{EF44A831-F5A5-475B-B258-DB9C454E2FD8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Availability_Models", "..\Backup\Team-TechWhiz\BackendSolutions\Availability\Models\Availability_Models.csproj", "{C2F7411F-2DCE-46A3-BEDE-DC858560F4A8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Availability_DataEntities", "..\Backup\Team-TechWhiz\BackendSolutions\Availability\Entities\Availability_DataEntities.csproj", "{8B3411CF-A476-4379-BA60-54321B8B7424}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{508B55D3-FEA8-4701-9431-770E345992E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{508B55D3-FEA8-4701-9431-770E345992E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{508B55D3-FEA8-4701-9431-770E345992E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{508B55D3-FEA8-4701-9431-770E345992E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6F09EEB-8D92-4192-984D-31CB251CED0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6F09EEB-8D92-4192-984D-31CB251CED0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6F09EEB-8D92-4192-984D-31CB251CED0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6F09EEB-8D92-4192-984D-31CB251CED0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{712C6008-160E-49E3-AFC7-5386F7348AF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712C6008-160E-49E3-AFC7-5386F7348AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712C6008-160E-49E3-AFC7-5386F7348AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712C6008-160E-49E3-AFC7-5386F7348AF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FA366AA-4BB6-4839-80CB-27A4D1A144E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FA366AA-4BB6-4839-80CB-27A4D1A144E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FA366AA-4BB6-4839-80CB-27A4D1A144E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FA366AA-4BB6-4839-80CB-27A4D1A144E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F15996D1-F99B-487A-842F-13F6D8A6DB1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F15996D1-F99B-487A-842F-13F6D8A6DB1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F15996D1-F99B-487A-842F-13F6D8A6DB1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F15996D1-F99B-487A-842F-13F6D8A6DB1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38549BA9-12CD-430D-9BE2-171B938F200D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38549BA9-12CD-430D-9BE2-171B938F200D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38549BA9-12CD-430D-9BE2-171B938F200D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38549BA9-12CD-430D-9BE2-171B938F200D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF44A831-F5A5-475B-B258-DB9C454E2FD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF44A831-F5A5-475B-B258-DB9C454E2FD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF44A831-F5A5-475B-B258-DB9C454E2FD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF44A831-F5A5-475B-B258-DB9C454E2FD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2F7411F-2DCE-46A3-BEDE-DC858560F4A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2F7411F-2DCE-46A3-BEDE-DC858560F4A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2F7411F-2DCE-46A3-BEDE-DC858560F4A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2F7411F-2DCE-46A3-BEDE-DC858560F4A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B3411CF-A476-4379-BA60-54321B8B7424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B3411CF-A476-4379-BA60-54321B8B7424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B3411CF-A476-4379-BA60-54321B8B7424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B3411CF-A476-4379-BA60-54321B8B7424}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5FE4D1C-F664-4222-89B5-EA4AF5B03B47}
+	EndGlobalSection
+EndGlobal
