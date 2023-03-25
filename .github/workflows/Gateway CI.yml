@@ -16,7 +16,7 @@ jobs:
     
     strategy:
       matrix:
-        project: [Gateway_Solution, Patient_Services,Availability_Services,Appointment_ServiceLayer]
+        project: [Gateway_Solution, Patient_Services,Availability_Services,Appointment_ServiceLayer,Allergy_Services]
 
     steps:
     - uses: actions/checkout@v3
