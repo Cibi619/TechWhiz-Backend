@@ -335,7 +335,33 @@
         }
       ]
     },
-    //f971bbdd-c9e0-4e98-89e2-ba091981a682
+
+    //Allergy Database
+
+    {
+      "UpstreamPathTemplate": "/Whizcare/Allergy/GetAllAllergy",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Allergy/GetAllAllergy",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7225
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/Whizcare/Allergy/AddAllergies",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/Allergy/AddAllergies",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7225
+        }
+      ]
+    }
   ],
   "GlobalConfiguration": {
     "BaseUrl": "https://localhost:7163"
