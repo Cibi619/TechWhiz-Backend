@@ -23,13 +23,13 @@ jobs:
     - name: Restore dependencies
       run: |
         cd Gateway_Solution
-        cd Patient_Services
+        cd ./Patient_Services
         dotnet restore
     - name: Build
       run: |
         dotnet build --no-restore Gateway_Solution
-        dotnet build --no-restore Patient_Services
+        dotnet build --no-restore ./Patient_Services
     - name: Test
       run: |
         dotnet test --no-build --verbosity normal Gateway_Solution
-        dotnet test --no-build --verbosity normal Patient_Services
+        dotnet test --no-build --verbosity normal ./Patient_Services
