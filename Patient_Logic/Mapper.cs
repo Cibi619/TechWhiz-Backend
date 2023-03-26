@@ -61,16 +61,16 @@ namespace Patient_Logic
             };
         }
 
-        public static HealthHistory Map(Models.HealthHistory hh)
+        public static HealthHistory Map(Models.HealthHistory h)
         {
             return new HealthHistory()
             {
-                HhId= hh.HhId,
-                PatientId = hh.PatientId,
-                Date= hh.Date,
-                DoctorName= hh.DoctorName,
-                Diagnosis= hh.Diagnosis,
-                AppointmentId = hh.AppointmentId,
+                HhId= h.HhId,
+                PatientId = h.PatientId,
+                Date= h.Date,
+                DoctorName= h.DoctorName,
+                Diagnosis= h.Diagnosis,
+                AppointmentId = h.AppointmentId,
             };
         }
 
