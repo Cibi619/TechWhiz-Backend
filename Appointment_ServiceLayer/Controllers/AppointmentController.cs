@@ -64,6 +64,27 @@ namespace ServiceLayer.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpGet("GetAppointmentsAfterCheckup")]
+        public ActionResult GetAppointmentsAfterCheckup([FromHeader] Guid doc_id , [FromHeader] string dates )
+        {
+            try
+            {
+                var date1 = DateTime.Parse(dates);
+                var appointment = _logic.GetAppointmentsAfterCheckup(date1,doc_id);
+                if (appointment != null)
+                {
+                    return Ok(appointment);
+                }
+                else
+                {
+                    return NoContent();
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
         [HttpPost("BookAppiontment")] // Trying to create a resource on the server
         public ActionResult AddAppointment([FromBody] Models.Appointment a)
