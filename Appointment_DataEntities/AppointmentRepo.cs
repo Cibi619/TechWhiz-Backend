@@ -34,7 +34,7 @@ namespace DataEntities
                     break;
                 case "Rejected":
                     s = "Appointment Rejected";
-                    b = "Dear applicant, \n\nYour Appointment has been rejected from the Doctor. Sorry for the inconvinience.\nPlease Re-Schedule your Appointment.\n\nThank you.\nWhizcare Hospital\nIndia";
+                    b = $"Dear applicant, \n\nYour Appointment has been rejected from the Doctor on {d}. Sorry for the inconvinience.\nPlease Re-Schedule your Appointment.\n\nThank you.\nWhizcare Hospital\nIndia";
                     break;
                 case "Sent":
                     s = "Appointment Booked Successfully";
