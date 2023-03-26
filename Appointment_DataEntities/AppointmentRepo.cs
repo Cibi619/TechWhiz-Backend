@@ -72,13 +72,25 @@ namespace DataEntities
 
         public List<Appointment> GetAppointmentsByDate(DateTime date)
         {
-            var find = context.Appointments.Where(a => a.Date == date.Date && a.Status=="Accepted").ToList();
+            var find = context.Appointments.Where(a => a.Date == date.Date && a.Status == "Accepted").ToList();
             return find;
         }
 
         public List<Appointment> GetAppointmentsByDoctor(Guid doctor_id, string status)
         {
-            return context.Appointments.Where(a => a.DoctorId == doctor_id && a.Status==status).ToList();
+            return context.Appointments.Where(a => a.DoctorId == doctor_id && a.Status == status).ToList();
+        }
+
+        public IEnumerable<Appointment> GetAppointmentsAfterCheckup(DateTime date, Guid doctor_id)
+        {
+            var apps=(from a in context.Appointments
+                      join c in context.PatientIntialCheckups
+                      on a.AppointmentId equals c.AppointmentId
+                      where a.DoctorId==doctor_id
+                      && a.Date==date.Date
+                      && c.ChechupStatus==true
+                      select a).ToList();
+            return apps;
         }
 
         public List<Appointment> GetAppointmentsByPatient(Guid patient_id)
@@ -98,6 +110,6 @@ namespace DataEntities
             return appointment;
         }
 
-         }
+    }
        
 }

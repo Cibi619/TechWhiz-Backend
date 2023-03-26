@@ -18,6 +18,9 @@ namespace DataEntities
 
         public List<DataEntities.Entities.Appointment> GetAppointmentsByDoctor(Guid doctor_id,string status);
 
+        public IEnumerable<Appointment> GetAppointmentsAfterCheckup(DateTime date, Guid doctor_id);
+
+
 
         public DataEntities.Entities.Appointment UpdateStatus(DataEntities.Entities.Appointment appointment);
 
