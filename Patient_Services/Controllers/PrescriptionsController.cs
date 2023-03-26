@@ -40,7 +40,7 @@ namespace Services.Controllers
         public IActionResult Post([FromBody]Prescriptions prescriptions)
         {
             var p = presciption.AddPrescriptions(prescriptions);
-            if (p != null) return Ok(prescriptions);
+            if (p != null) return Ok(p);
             else return BadRequest("Something");
             
         }

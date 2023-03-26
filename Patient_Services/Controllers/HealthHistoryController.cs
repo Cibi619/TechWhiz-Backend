@@ -43,7 +43,7 @@ namespace Services.Controllers
             var s = healthLogic.AddHealthHistory(healthHistory);
             if (s != null)
             {
-                return Ok(healthHistory);
+                return Ok(s);
             }
             else
             {
