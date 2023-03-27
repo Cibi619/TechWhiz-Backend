@@ -36,7 +36,11 @@ namespace ServiceLayer.Controllers
                     return NoContent();
                 }
             }
-            catch(Exception ex)
+            catch (SqlException e)
+            {
+                return BadRequest(e.Message);
+            }
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -59,6 +63,10 @@ namespace ServiceLayer.Controllers
                     return NoContent();
                 }
             }
+            catch (SqlException e)
+            {
+                return BadRequest(e.Message);
+            }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
@@ -79,6 +87,10 @@ namespace ServiceLayer.Controllers
                 {
                     return NoContent();
                 }
+            }
+            catch (SqlException e)
+            {
+                return BadRequest(e.Message);
             }
             catch (Exception ex)
             {
@@ -122,7 +134,11 @@ namespace ServiceLayer.Controllers
                     return NoContent();
                 }
             }
-            catch(Exception ex)
+            catch (SqlException e)
+            {
+                return BadRequest(e.Message);
+            }
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -159,11 +175,15 @@ namespace ServiceLayer.Controllers
                 _logic.EmailFunc(Email, date1, status);
                 return Ok("Email Sent");
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
-                return BadRequest(e.Message+"Email not sent");
+                return BadRequest(e.Message);
             }
-            
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
         }
 
     }

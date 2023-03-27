@@ -5,6 +5,7 @@ using Patient_Logic;
 using Models;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -24,28 +25,47 @@ namespace Services.Controllers
         [HttpGet("Get_Prescription")]
         public IActionResult Get([FromHeader] Guid HHID)
         {
-            var x = presciption.GetPrescriptions(HHID);
-            if (x != null)
+            try
             {
-                return Ok(x);
+                var x = presciption.GetPrescriptions(HHID);
+                if (x != null)
+                {
+                    return Ok(x);
+                }
+                else
+                {
+                    return BadRequest("Something");
+                }
             }
-            else
+            catch (SqlException e)
             {
-                return BadRequest("Something");
+                return BadRequest(e.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
             }
         }
 
         // POST api/values
         [HttpPost("Prescription_Add")]
-        public IActionResult Post([FromBody]Prescriptions prescriptions)
+        public IActionResult Post([FromBody] Prescriptions prescriptions)
         {
-            var p = presciption.AddPrescriptions(prescriptions);
-            if (p != null) return Ok(p);
-            else return BadRequest("Something");
-            
+            try {
+                var p = presciption.AddPrescriptions(prescriptions);
+                if (p != null) return Ok(p);
+                else return BadRequest("Something");
+
+            }
+            catch (SqlException e)
+            {
+                return BadRequest(e.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
-
-
     }
 }
 
