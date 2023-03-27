@@ -47,8 +47,8 @@ namespace ServiceLayer.Controllers
             {
 
 
-                _logic.AddCheckUpDetails(patientIntialCheckup);
-                return Ok();
+                var r=_logic.AddCheckUpDetails(patientIntialCheckup);
+                return Ok(r);
             }
             catch (SqlException ex)
             {
