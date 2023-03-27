@@ -19,72 +19,120 @@ namespace Services.Controllers
         [HttpGet("GetAllPatients")]
         public IActionResult  Get()
         {
-            var p=patientlogic.GetPatients();
-            if(p!=null)
+            try
             {
-                return Ok(p);
+                var p = patientlogic.GetPatients();
+                if (p != null)
+                {
+                    return Ok(p);
+                }
+                else
+                    return BadRequest();
             }
-            else
-                return BadRequest();
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
         }
 
         [HttpGet("GetAllPatientsById")]
         public IActionResult Get([FromHeader]Guid Id)
         {
-            var p = patientlogic.GetPatientById(Id);
-            if (p != null)
+            try
             {
-                return Ok(p);
+                var p = patientlogic.GetPatientById(Id);
+                if (p != null)
+                {
+                    return Ok(p);
+                }
+                else
+                    return BadRequest();
             }
-            else
-                return BadRequest();
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+           
         }
 
         [HttpPost("Register_Patient")]
         public IActionResult RegisterPat([FromBody]Patient patient)
         {
-            patient.DateOfBirth = patient.DateOfBirth.AddDays(1);
-            var p = patientlogic.AddPatient(patient);
-            if (p != null)
+            try
             {
-                return Ok(p);
+                patient.DateOfBirth = patient.DateOfBirth.AddDays(1);
+                var p = patientlogic.AddPatient(patient);
+                if (p != null)
+                {
+                    return Ok(p);
+                }
+                else
+                    return BadRequest("Sorry...Something Went Wrong");
             }
-            else
-                return BadRequest("Sorry...Something Went Wrong");
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
         }
 
         [HttpGet("SignIn_Patient")]
         public IActionResult SignInPatient([FromHeader]string email, [FromHeader] string pass)
         {
-            var p=patientlogic.LoginPatient(email, pass);
-            if (p != null)
+            try
             {
-                return Ok(p);
+                var p = patientlogic.LoginPatient(email, pass);
+                if (p != null)
+                {
+                    return Ok(p);
+                }
+                else
+                    return BadRequest("Sorry Not Found");
             }
-            else
-                return BadRequest("Sorry Not Found");
+            catch(Exception ex)
+            {
+                 return BadRequest(ex.Message);
+            }
+            
         }
 
         [HttpDelete("Delete_Patient")]
 
         public IActionResult Delete([FromHeader]string email)
         {
-            var p=patientlogic.DeletePatient(email);
-            if (p != null)
+            try
             {
-                return Ok(p);
+                var p = patientlogic.DeletePatient(email);
+                if (p != null)
+                {
+                    return Ok(p);
+                }
+                else
+                    return BadRequest("Not Found");
             }
-            else
-                return BadRequest("Not Found");
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
         }
 
         [HttpPut("Update_Patient")]
 
         public IActionResult Update([FromHeader]string email, [FromBody]Patient patient)
         {
-            patient.DateOfBirth = patient.DateOfBirth.AddDays(1);
-            patientlogic.UpdatePatient(email, patient);
-            return Ok(patient);
+          try
+            {
+                patient.DateOfBirth = patient.DateOfBirth.AddDays(1);
+                patientlogic.UpdatePatient(email, patient);
+                return Ok(patient);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+           
         }
 
 
