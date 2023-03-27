@@ -6,6 +6,7 @@ using Patient_Logic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using DataEntities.Entities;
+using Microsoft.Data.SqlClient;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -25,29 +26,51 @@ namespace Services.Controllers
         [HttpGet ("GetHistory")]
         public IActionResult Get([FromHeader]  Guid patientId)
         {
-            var x = healthLogic.GetHealthHistory(patientId);
-            if (x != null)
+            try
             {
-                return Ok(x);
+                var x = healthLogic.GetHealthHistory(patientId);
+                if (x != null)
+                {
+                    return Ok(x);
+                }
+                else
+                {
+                    return BadRequest("Something");
+                }
             }
-            else
+            catch (SqlException e)
             {
-                return BadRequest("Something");
+                return BadRequest(e.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
             }
         }
 
         [HttpPost("HealthHistory_Add")]
         public IActionResult Post([FromBody] Models.HealthHistory healthHistory)
         {
-            healthHistory.Date = healthHistory.Date.AddDays(1);
-            var s = healthLogic.AddHealthHistory(healthHistory);
-            if (s != null)
+            try
             {
-                return Ok(s);
+                healthHistory.Date = healthHistory.Date.AddDays(1);
+                var s = healthLogic.AddHealthHistory(healthHistory);
+                if (s != null)
+                {
+                    return Ok(s);
+                }
+                else
+                {
+                    return BadRequest("Somwtinf");
+                }
             }
-            else
+            catch (SqlException e)
             {
-                return BadRequest("Somwtinf");
+                return BadRequest(e.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
             }
 
         }

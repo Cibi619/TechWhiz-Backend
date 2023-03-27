@@ -31,7 +31,10 @@ namespace ServiceLayer.Controllers
                     return NoContent();
                 }
             }
-    
+            catch (SqlException e)
+            {
+                return BadRequest(e.Message);
+            }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);

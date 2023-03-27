@@ -1,6 +1,7 @@
 ﻿using BusinessLogic;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Models;
 
 namespace Services.Controllers
@@ -22,7 +23,11 @@ namespace Services.Controllers
                 var allergyList = logic.GetAllAllergies(appointmentid);
                 return Ok(allergyList);
             }
-            catch(Exception ex)
+            catch (SqlException e)
+            {
+                return BadRequest(e.Message);
+            }
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -34,7 +39,11 @@ namespace Services.Controllers
             {
                 return Ok(logic.addPatientAllergy(allergy));
             }
-            catch(Exception ex)
+            catch (SqlException e)
+            {
+                return BadRequest(e.Message);
+            }
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
