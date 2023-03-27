@@ -44,7 +44,7 @@ namespace DataEntities
                     break;
             }
             string fromEmail = "whizcarehospitalgroup@gmail.com";
-            string password = "pvczuyxapumuimvn";
+            string pass = "pvczuyxapumuimvn";
             string smtpHost = "smtp.gmail.com";
             int smtpPort = 587;
 
@@ -55,7 +55,7 @@ namespace DataEntities
             // Create a SmtpClient object
             SmtpClient smtpClient = new SmtpClient(smtpHost, smtpPort);
             smtpClient.EnableSsl = true;
-            smtpClient.Credentials = new NetworkCredential(fromEmail, password);
+            smtpClient.Credentials = new NetworkCredential(fromEmail, pass);
             smtpClient.UseDefaultCredentials = false;
 
             // Send the email
